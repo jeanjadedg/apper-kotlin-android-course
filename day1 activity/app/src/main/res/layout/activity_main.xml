@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    tools:context=".MainActivity"
+    android:id="@+id/activity_main_layout">
+
+    <!-- Logo and Home Section -->
+    <LinearLayout
+        android:id="@+id/top_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="16dp">
+
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/logoImageView"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/home_icon_foreground"
+            android:layout_gravity="center_vertical" />
+
+        <!-- Home Text -->
+        <TextView
+            android:id="@+id/homeTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Home"
+            android:textColor="@color/black"
+            android:gravity="center_vertical"
+            android:textSize="18sp" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <!-- Sign-Out Button -->
+        <Button
+            android:id="@+id/signOutButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign Out"
+            android:backgroundTint="#ECECEC"
+            android:textColor="@android:color/darker_gray"
+            android:drawableLeft="@drawable/sign_out_icon_foreground"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"/>
+
+    </LinearLayout>
+
+    <!-- Button Container -->
+    <LinearLayout
+        android:id="@+id/buttons_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="16dp">
+
+        <!-- Spendings and Budget Buttons -->
+        <Button
+            android:id="@+id/spendingsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Spending"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="@color/primary"
+            android:textColor="@android:color/white"
+            android:padding="8dp"/>
+
+        <Button
+            android:id="@+id/budgetButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Income"
+            android:backgroundTint="@color/primary"
+            android:textColor="@android:color/white"
+            android:padding="8dp"/>
+    </LinearLayout>
+
+    <!-- Centered Current Money Section -->
+    <RelativeLayout
+        android:id="@+id/current_money_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/current_money_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Current Money:"
+            android:textColor="@color/primary"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/current_money_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/current_money_label"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:text="$1000"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/list_name_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="10dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/list_icon_foreground"
+            android:layout_gravity="center_vertical" />
+
+        <TextView
+            android:id="@+id/listNameTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="History"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_marginStart="8dp"
+            android:gravity="center_vertical" />
+    </LinearLayout>
+
+    <!-- List and FloatingActionButton Container -->
+    <FrameLayout
+        android:id="@+id/list_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- ListView and FloatingActionButton -->
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton"
+            android:backgroundTint="@color/primary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            app:srcCompat="@android:drawable/ic_popup_sync" />
+
+    </FrameLayout>
+
+</LinearLayout>
